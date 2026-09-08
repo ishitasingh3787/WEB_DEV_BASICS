@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS BOX MODEL EXAMPLE</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            line-height: 0.9;
+            padding:20px;
+        }
+        .box-model-demo{
+            width: 300px;
+            height: 150px;
+            margin: 20px;
+            padding: 20px;
+            border: 5px solid #333;
+            background-color: #f4f4f4;
+        }
+        .content-box{
+            box-sizing: content-box;
+            background-color: #e0f7fa;
+        }
+        .border-box{
+            box-sizing: border-box;
+            background-color: #ffe0b2;
+        }
+        .highlight{
+            background-color: yellow;
+            font-weight: bold;
+        }
+        .inline-example{
+            display: inline-block;
+            /* inline elements ignore width and height */
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid #333;
+            background-color: #c8e6c9;
+        }
+        .block-example{
+            display: block;
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid #333;
+            background-color: #ffcdd2;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Box Model Example</h1>
+    <h2>Content Box</h2>
+    <div class="box-model-demo content-box">
+       <p>This is a content box. The width and height only include the content area.</p>
+       <p>width:300px+40px(padding)+10px(border) = 350px</p>
+       <p>height:150px+40px(padding)+10px(border) = 200px</p>
+    </div>
+    <h2>Border Box</h2>
+    <div class="box-model-demo border-box">
+        <p>This is a border box. The width and height include the content, padding, and border.</p>
+        <p>width:300px</p>
+        <p>height:150px</p>
+    </div>
+    <h2>Inline vs Block Elements</h2>
+    <p>This is a paragraph with an <span class="inline-example">inline element</span> inside it. Inline elements do not start on a new line and only take up as much width as necessary.
+    </p>
+    <div class="block-example">This is a block element.</div>
+    </div>
+    <h2>Box Model Components</h2>
+    <p>The CSS box model consists of the following components:</p>
+    <ul>
+        <li>
+            <span class="highlight">Content</span>:The actual content of the box, where text and images appear.
+        </li>
+        <li>
+            <span class="highlight">Padding</span>: The space between the content and the border. It is transparent and can be used to create space inside the box.
+        </li>
+        <li>
+            <span class="highlight">Border</span>: The border wraps around the padding and content. It can have different styles, widths, and colors.
+        </li>
+        <li>
+            <span class="highlight">Margin</span>: The space outside the border. It is transparent and can be used to create space between boxes.
+        </li>
+    </ul>
+</body>
+</html>
